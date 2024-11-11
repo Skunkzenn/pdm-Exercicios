@@ -17,37 +17,45 @@ import com.victord.noticeworld.ui.theme.NoticeWorldTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             NoticeWorldTheme {
                 val navController = rememberNavController()
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    NavHost(navController = navController,
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    topBar = { CustomTopAppBar() },     // Barra superior
+                    bottomBar = { CustomBottomAppBar(navController) } // Barra inferior
+                ) { innerPadding ->
+                    // Aplica o innerPadding ao conteúdo dentro do NavHost
+                    NavHost(
+                        navController = navController,
                         startDestination = "home",
-                        modifier = Modifier.padding(innerPadding))  {
-                        composable( route = "home"){
+                        modifier = Modifier.fillMaxSize()
+                    ) {
+                        composable(route = "home") {
                             InicialView(
-                                modifier = Modifier.padding(innerPadding),
-
-                                onArticleClick = {
-                                    navController.navigate("article/${it}")
+                                navController = navController,
+                                modifier = Modifier.padding(innerPadding), // Aplica padding apenas ao conteúdo
+                                onArticleClick = { articleUrl ->
+                                    navController.navigate("article/$articleUrl")
                                 }
                             )
                         }
-                        composable(route = "article/{url}"){
-                            val url = it.arguments?.getString("url")
-                            url?.let {
-                                PubDetailView(url = it)
+                        composable(route = "article/{url}") { backStackEntry ->
+                            val url = backStackEntry.arguments?.getString("url")
+                            url?.let { articleUrl ->
+                                PubDetailView(
+                                    url = articleUrl,
+                                )
                             }
                         }
                     }
-
                 }
             }
         }
     }
 }
+
 
 
 
