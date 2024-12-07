@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1039357889439",
+    "project_id": "bdcompras-44364",
+    "storage_bucket": "bdcompras-44364.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039357889439:android:e8dd7a19c4a006092b8baa",
+        "android_client_info": {
+          "package_name": "com.victor.myshoppinglist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVFHVrwksIwqF1i3VZwdyloSQuWtcyrq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

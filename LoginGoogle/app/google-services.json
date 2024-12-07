@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "472266916108",
+    "project_id": "myshoppinglist-dea17",
+    "storage_bucket": "myshoppinglist-dea17.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472266916108:android:f77b4a86dc458387880929",
+        "android_client_info": {
+          "package_name": "com.victor.listacompras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472266916108-q99a3def0mdq77mn20a0c1c3v3lfvsvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.victor.listacompras",
+            "certificate_hash": "d2b588f82170b96c05277278e9e561a7ecaef5e3"
+          }
+        },
+        {
+          "client_id": "472266916108-d58ii74dhh7iogck03gs04kg4e8q6qav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzsTftzJg8QFRRmaOx2oh_75WMGnlRdnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472266916108-d58ii74dhh7iogck03gs04kg4e8q6qav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

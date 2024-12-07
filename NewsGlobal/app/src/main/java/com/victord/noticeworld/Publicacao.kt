@@ -28,6 +28,12 @@ fun Date.toStringDate(): String {
     return dateFormat.format(this)
 }
 
+@SuppressLint("SimpleDateFormat")
+fun Date.toStringDateQuery(): String {
+    val dateFormat = SimpleDateFormat("yyyy-dd-MM")
+    return dateFormat.format(this)
+}
+
 
 data class Publicacao(
     var titulo: String?,

@@ -11,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import org.json.JSONObject
+import java.util.Date
 
 
 data class ArticleState(
@@ -25,12 +26,15 @@ class InicialViewModel : ViewModel() {
     val uiState: StateFlow<ArticleState> = _uiState.asStateFlow()
 
     fun fetchArticles() {
+
+        var dateNow = Date()
+
         _uiState.value = ArticleState(
             isLoading = true
         )
         val client = OkHttpClient()
         val request = Request.Builder()
-            .url("https://newsapi.org/v2/everything?q=tesla&from=2024-10-11&sortBy=publishedAt&apiKey=fdff7594f550460291971dde2d25fbbf")
+            .url("https://newsapi.org/v2/everything?q=tesla&from=${dateNow.toStringDateQuery()}&sortBy=publishedAt&apiKey=fdff7594f550460291971dde2d25fbbf")
             .build()
 
         client.newCall(request).enqueue(object : Callback {
